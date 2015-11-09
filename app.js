@@ -28,9 +28,9 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(session({
     secret: 'keyboard cat',
-    cookie: {
-        maxAge: 3600
-    },
+	cookie : {
+		maxAge : 36000
+	}
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
