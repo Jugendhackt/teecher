@@ -27,7 +27,10 @@ app.set('view engine', 'ejs');
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(session({
-    secret: 'keyboard cat'
+    secret: 'keyboard cat',
+	cookie : {
+		maxAge : 36000
+	}
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -47,7 +50,7 @@ app.use(function(req, res, next) {
 });
 
 //// Initialize Passport
-var initPassport = require('./passport-init');
+var initPassport = require('./config/passport-init');
 initPassport(passport);
 
 // error handlers
