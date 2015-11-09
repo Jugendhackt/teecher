@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 require('./models/models');
 var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
 var passport = require('passport');
 var api = require('./routes/api');
 var authenticate = require('./routes/authenticate')(passport);
